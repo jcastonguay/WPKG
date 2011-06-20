@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?><packages>
+<package id="webdrive" name="Webdrive" revision="6" priority="5" reboot="false">
+	<file name="WebDrive.msi" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/WebDrive.msi"/>
+	</file>
+	<file name="File Share W Drive.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20W%20Drive.lnk"/>
+	</file>
+	<file name="setupwebdrive.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupwebdrive.lnk"/>
+	</file>	
+	<check type="uninstall" condition="exists" path="WebDrive"/>
+		<install cmd='msiexec /i "C:\windows\temp\WebDrive.msi" WDPROP_REGCODE="55-2DEN03-2171E2A7-00060C-CFE0" WDPROP_INSTALLOPTIONS="512" /passive'/>
+		<install cmd='cmd /c copy c:\windows\temp\setupwebdrive.lnk "c:\documents and settings\all users\start menu\programs\startup\setupwebdrive.lnk"'/> 
+		<install cmd='cmd /c copy "c:\windows\temp\File Share W Drive.lnk" "C:\Documents and Settings\All Users\Desktop\File Share W Drive.lnk"'/>	
+		
+		<upgrade cmd='msiexec /i "C:\windows\temp\WebDrive.msi" WDPROP_REGCODE="55-2DEN03-2171E2A7-00060C-CFE0" WDPROP_INSTALLOPTIONS="512" /passive'/>
+		<upgrade cmd='cmd /c copy c:\windows\temp\setupwebdrive.lnk "c:\documents and settings\all users\start menu\programs\startup\setupwebdrive.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share W Drive.lnk" "C:\Documents and Settings\All Users\Desktop\"'/>           	
+		<remove cmd='msiexec /x "C:\windows\temp\WebDrive.msi" /qn'/>
+		<remove cmd='cmd /c del "C:\Documents and Settings\All Users\Desktop\File Share W Drive.lnk"'/>
+</package>
+
+<package id="webdriveboston" name="WebDrive settings for Boston" revision="5" priority="1" reboot="false">
+	<file name="setupboston.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupboston.lnk"/>
+	</file>
+	<file name="File Share Boston Drive.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+	</file>
+	<check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupboston.lnk"/> 
+		<install cmd='cmd /c copy c:\windows\temp\setupboston.lnk "c:\documents and settings\all users\start menu\programs\startup\setupboston.lnk"'/>
+		<install cmd='cmd /c copy "c:\windows\temp\File Share Boston Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+		<upgrade cmd='cmd /c copy c:\windows\temp\setupboston.lnk "c:\documents and settings\all users\start menu\programs\startup\setupboston.lnk"'/>
+		<upgrade cmd='cmd /c copy c:\windows\temp\File Share Boston Drive.lnk "c:\documents and settings\all users\Desktop\"'/>
+		<remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupboston.lnk"'/>
+		<remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Boston Drive.lnk"'/>
+</package>
+
+
+<package id="webdrivenewyork" name="WebDrive settings for New York" revision="5" priority="1" reboot="false">
+        <file name="setupnewyork.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupnewyork.lnk"/>
+        </file>
+        <file name="File Share New York Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupnewyork.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setupnewyork.lnk "c:\documents and settings\all users\start menu\programs\startup\setupnewyork.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share New York Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setupnewyork.lnk "c:\documents and settings\all users\start menu\programs\startup\setupnewyork.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share New York Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupnewyork.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share New York Drive.lnk"'/>
+</package>
+
+
+<package id="webdriveseattle" name="WebDrive settings for Seattle" revision="5" priority="1" reboot="false">
+        <file name="setupseattle.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupseattle.lnk"/>
+        </file>
+        <file name="File Share Seattle Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupseattle.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setupseattle.lnk "c:\documents and settings\all users\start menu\programs\startup\setupseattle.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share Seattle Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setupseattle.lnk "c:\documents and settings\all users\start menu\programs\startup\setupseattle.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share Seattle Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupseattle.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Seattle Drive.lnk"'/>
+</package>
+
+
+<package id="webdrivechicago" name="WebDrive settings for Chicago" revision="7" priority="1" reboot="false">
+        <file name="setupchicago.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupchicago.lnk"/>
+        </file>
+        <file name="File Share Chicago Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupchicago.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setupchicago.lnk "c:\documents and settings\all users\start menu\programs\startup\setupchicago.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share Chicago Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setupchicago.lnk "c:\documents and settings\all users\start menu\programs\startup\setupchicago.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share Chicago Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+		<upgrade cmd='cmd /c del "c:\documents and settings\all users\start menu\setupchicago.lnk"' />
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupchicago.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Chicago Drive.lnk"'/>
+</package>
+
+
+<package id="webdriveportland" name="WebDrive settings for Portland" revision="6" priority="1" reboot="false">
+        <file name="setupportland.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupportland.lnk"/>
+        </file>
+        <file name="File Share Portland Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+	<check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupportland.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setupportland.lnk "c:\documents and settings\all users\start menu\programs\startup\setupportland.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share Portland Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setupportland.lnk "c:\documents and settings\all users\start menu\programs\startup\setupportland.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share Portland Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupportland.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Portland Drive.lnk"'/>
+</package>
+
+
+<package id="webdrivelosangeles" name="WebDrive settings for Los Angeles" revision="5" priority="1" reboot="false">
+        <file name="setuplosangeles.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setuplosangeles.lnk"/>
+        </file>
+        <file name="File Share Los Angeles Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setuplosangeles.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setuplosangeles.lnk "c:\documents and settings\all users\start menu\programs\startup\setuplosangeles.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share Los Angeles Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setuplosangeles.lnk "c:\documents and settings\all users\start menu\programs\startup\setuplosangeles.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share Los Angeles Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setuplosangeles.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Los Angeles Drive.lnk"'/>
+</package>
+
+<package id="webdriveorangecounty" name="WebDrive settings for Orange County" revision="5" priority="1" reboot="false">
+        <file name="setuporangecounty.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setuporangecounty.lnk"/>
+        </file>
+        <file name="File Share Orange County Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setuporangecounty.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setuporangecounty.lnk "c:\documents and settings\all users\start menu\programs\startup\setuporangecounty.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share Orange County Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setuporangecounty.lnk "c:\documents and settings\all users\start menu\programs\startup\setuporangecounty.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share Orange County Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setuporangecounty.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share Orange County Drive.lnk"'/>
+</package>
+
+<package id="webdrivesandiego" name="WebDrive settings for San Diego" revision="5" priority="1" reboot="false">
+        <file name="setupsandiego.lnk" timeout="7201">
+              <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/setupsandiego.lnk"/>
+        </file>
+        <file name="File Share San Diego Drive.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/File%20Share%20X%20Drive.lnk"/>
+        </file>
+        <check type="file" condition="exists" path="c:\documents and settings\all users\start menu\programs\startup\setupsandiego.lnk"/>
+                <install cmd='cmd /c copy c:\windows\temp\setupsandiego.lnk "c:\documents and settings\all users\start menu\programs\startup\setupsandiego.lnk"'/>
+                <install cmd='cmd /c copy "c:\windows\temp\File Share San Diego Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <upgrade cmd='cmd /c copy c:\windows\temp\setupsandiego.lnk "c:\documents and settings\all users\start menu\programs\startup\setupsandiego.lnk"'/>
+                <upgrade cmd='cmd /c copy "c:\windows\temp\File Share San Diego Drive.lnk" "c:\documents and settings\all users\Desktop\"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\startup\setupsandiego.lnk"'/>
+                <remove cmd='cmd /c del "c:\documents and settings\all users\Desktop\File Share San Diego Drive.lnk"'/>
+</package>
+
+
+<package id="quicktime" name="QuickTime" revision="1" priority="2" reboot="false">
+	<file name="QuickTimeInstaller.ini" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/QuickTimeInstaller.ini"/>
+        </file>
+	<file name="QuickTimeInstaller.exe" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/QuickTimeInstaller.exe"/>
+	</file>
+	<check type="uninstall" condition="exists" path="QuickTime"/>
+	<install cmd="C:\windows\temp\QuickTimeInstaller.exe /quiet"/>
+	<install cmd='cmd /c del /s /q "c:\documents and settings\all users\Desktop\QuickTime Player.lnk"'/>
+	<remove cmd="%SYSTEMROOT%\system32\msiexec.exe /i {5E863175-E85D-44A6-8968-82507D34AE7F} /qf /quiet"/>
+	<upgrade cmd="%SOFTWARE%\Quicktime\QuickTimeInstaller.exe /quiet"/>
+	<upgrade cmd='cmd /c del /s /q "c:\documents and settings\all users\Desktop\QuickTime Player.lnk"'/>
+</package>
+
+<package id="bginfo" name="BgInfo" revision="3" priority="4" reboot="false">
+	<file name="Bginfo.exe" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Bginfo.exe"/>
+	</file>
+	<file name="background.bgi" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/background.bgi"/>
+	</file>
+	<file name="set-background.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/set-background.lnk" />
+	</file>
+	<check type="file" condition="exists" path="C:\Program Files\WPKG\Bginfo.exe" />
+		<install cmd='cmd /c copy c:\windows\temp\Bginfo.exe "C:\Program Files\WPKG\Bginfo.exe"'>
+			<exit code="0"/>
+		</install>
+		<install cmd='cmd /c copy c:\windows\temp\background.bgi "C:\Program Files\WPKG\background.bgi"'>
+			<exit code="0"/>
+		</install>
+		<install cmd='cmd /c copy c:\windows\temp\set-background.lnk "C:\Documents and Settings\All Users\Start Menu\Programs\Startup\set-background.lnk"'>
+			<exit code="0" />
+		</install>
+	<remove cmd=""/>
+		<upgrade cmd='cmd /c copy c:\windows\temp\Bginfo.exe "C:\Program Files\WPKG\Bginfo.exe"'>
+                        <exit code="0"/>
+                </upgrade>
+                <upgrade cmd='cmd /c copy c:\windows\temp\background.bgi "C:\Program Files\WPKG\background.bgi"'>
+                        <exit code="0"/>
+                </upgrade>
+                <upgrade cmd='cmd /c copy c:\windows\temp\set-background.lnk "C:\Documents and Settings\All Users\Start Menu\Programs\Startup\set-background.lnk"'>
+                        <exit code="0" />
+                </upgrade>
+
+ <depends package-id="displaybackground"/>
+</package>
+
+<package id="displaybackground" name="The Background to display" revision="6" priority="1" reboot="false" execute="always">
+	<file name="Wallpaper1.bmp" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Wallpaper1.bmp"/>
+	</file>
+	<!-- <install cmd='cmd /c copy c:\windows\temp\Wallpaper1.bmp "c:\documents and settings\Greenpeace.D406S4D1\Application Data\Local Settings\Microsoft\Wallpaper1.bmp' /-->
+	<install cmd='cmd /c copy c:\windows\temp\Wallpaper1.bmp "c:\windows\dell.bmp"' />
+	<install cmd='"c:\program files\wpkg\Bginfo.exe" "c:\program files\wpkg\background.bgi" /timer:0 '/>
+<!-- there is also a vbs script we could use -->
+
+</package>
+
+<package id="fltweaks" name="Frontline Tweaks" revision="1" priority="1" reboot="false">
+	<file name="autologin.reg" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/autologin.reg"/>
+	</file>
+	<check type="registry" condition="exists" path="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Winlogon\DefaultPassword" />
+	<install cmd="regedit /s &quot;c:\windows\temp\autologin.reg&quot;">
+		<exit code="0"/>
+	</install>
+	<upgrade cmd="regedit /s &quot;c:\windows\temp\autologin.reg&quot;">
+            <exit code="0"/>
+	</upgrade>
+	<uninstall cmd=""/>
+</package>
+
+<package id="nod32" name="Nod32 Anti-Virus" revision="2" priority="4" reboot="false">
+	<file name="ndntenst.exe" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/ndntenst.exe"/>
+	</file>
+	<file name="nod32.reg" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/nod32.reg"/>
+	</file>
+	<check type="uninstall" condition="exists" path="NOD32 antivirus system"/>
+		<install cmd="&quot;c:\windows\temp\ndntenst.exe&quot; /s /silent /silentmode">
+			<exit code="0"/>
+		</install>
+		<install cmd="regedit /s &quot;c:\windows\temp\nod32.reg&quot;">
+			<exit code="0"/>
+		</install>
+	<remove cmd=""/>
+	<upgrade cmd=""/>
+</package>
+
+<package id="spybotsd" name="Spybot Search and Destroy 1.5" revision="2" priority="4" reboot="false">
+   <file name="spybotsd15.exe" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/spybotsd15.exe"/>
+        </file>
+   <file name="spybotsd_includes.exe" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/spybotsd_includes.exe"/>
+	</file>
+<check type="uninstall" condition="exists" path="Spybot - Search &amp; Destroy"/>
+  <install cmd="&quot;c:\windows\temp\spybotsd15.exe&quot; /verysilent /nocancel /noreboot">
+    <exit code="0"/>
+  </install>
+  <install cmd="&quot;c:\windows\temp\spybotsd_includes.exe&quot; /S">
+    <exit code="0"/>
+  </install>
+  <remove cmd="&quot;%ProgramFiles%\Spybot - Search &amp; Destroy\unins000.exe&quot; /SILENT /nocancel /noreboot"/>
+  <upgrade cmd="&quot;c:\windows\temp\spybotsd15.exe&quot; /verysilent /nocancel /noreboot">
+	<exit code="0"/>
+  </upgrade>
+  <upgrade cmd="&quot;c:\windows\temp\spybotsd_includes.exe&quot; /S">
+    <exit code="0"/>
+  </upgrade>
+</package>
+
+   
+
+<package id="jre" name="Java Runtime Environment 6" revision="21" priority="9" reboot="false">
+	<file name="jre-6u2-windows-i586-p.exe" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/jre-6u2-windows-i586-p.exe"/>
+	</file>  
+<check type="uninstall" condition="exists" path="Java(TM) 6 Update 2"/>
+  <install cmd="c:\windows\temp\jre-6u2-windows-i586-p.exe /quiet">
+    <exit code="0"/>
+  </install>
+  <remove cmd="MsiExec.exe /q /x{3248F0A8-6813-11D6-A77B-00B0D0150050}"/>
+</package>
+
+
+<package id="tightvnc" name="TightVNC server" revision="5" priority="5" reboot="false">
+	<file name="tightvnc-1.3.9-setup.exe" timeout="7201">
+		<source url="http://superb-east.dl.sourceforge.net/sourceforge/vnc-tight/tightvnc-1.3.9-setup.exe"/>
+	</file>
+	<file name="tightvnc.cmd" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/tightvnc.cmd"/>
+	</file>
+	<file name="tightvnc.reg" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/tightvnc.reg"/>
+	</file>
+        <check type="uninstall" condition="exists" path="TightVNC 1.3.9"/>
+        <install cmd="C:\WINDOWS\TEMP\tightvnc-1.3.9-setup.exe /sp- /verysilent"/>
+        <install cmd="%ProgramFiles%\TightVNC\WinVNC.exe -reinstall"/>
+        <install cmd="%ProgramFiles%\TightVNC\WinVNC.exe -servicehelper"/>
+        <install cmd='cmd /c netsh firewall add allowedprogram program = %ProgramFiles%\TightVNC\WinVNC.exe name = "Launch TightVNC Server"'/>
+        <install cmd='cmd /c "C:\WINDOWS\TEMP\tightvnc.cmd"'/>
+	<install cmd='cmd /c rd /s /q "c:\documents and settings\All Users\Start Menu\Programs\TightVNC"'/>
+	<upgrade cmd='cmd /c rd /s /q "c:\documents and settings\All Users\Start Menu\Programs\TightVNC"'>
+		<exit code="0"/>
+		<exit code="2"/>
+	</upgrade>
+	<upgrade cmd='cmd /c "C:\WINDOWS\TEMP\tightvnc.cmd"'/>
+        <remove cmd='"%ProgramFiles%\TightVNC\WinVNC.exe" -remove'/>
+        <remove cmd='"%ProgramFiles%\TightVNC\unins000.exe" /silent'/>
+</package>
+
+ 
+    <package id="openoffice" name="Openoffice 2" revision="2213" priority="2" reboot="false">
+        <file name="openofficeorg22.msi" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openofficeorg22.msi"/>
+        </file>
+	<file name="openofficeorg1.cab" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openofficeorg1.cab"/>
+        </file>
+	<file name="openofficeorg2.cab" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openofficeorg2.cab"/>
+        </file>
+	<file name="openofficeorg3.cab" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openofficeorg3.cab"/>
+        </file>
+	<file name="openofficeorg4.cab" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openofficeorg4.cab"/>
+        </file>
+	<file name="OpenOffice.org Base.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Base.lnk"/>
+	</file>
+	<file name="OpenOffice.org Math.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Math.lnk"/>
+        </file>
+	<file name="OpenOffice.org Spreadsheet.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Spreadsheet.lnk"/>
+        </file>
+	<file name="OpenOffice.org Draw.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Draw.lnk"/>
+        </file>
+	<file name="OpenOffice.org Presentation.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Presentation.lnk"/>
+        </file>
+	<file name="OpenOffice.org Word Processor.lnk" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OpenOffice.Org%20Word%20Processor.lnk"/>
+        </file>
+	<file name="Setup-writer.xcu" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Setup-writer.xcu"/>
+	</file>
+	<file name="Setup-calc.xcu" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Setup-calc.xcu"/>
+        </file>
+	<file name="Setup-impress.xcu" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Setup-impress.xcu"/>
+        </file>
+	<file name="openoffice.reg" timeout="7201">
+                <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/openoffice.reg"/>
+        </file>
+
+        <check type="uninstall" condition="exists" path="OpenOffice.org 2.2"/>
+	<install cmd='msiexec /qn /i "c:\windows\temp\openofficeorg22.msi" ALLUSERS=1 SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1' />
+	<install cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\OpenOffice.Org 2.2\*.lnk" "C:\documents and settings\all users\desktop\OpenOffice*.lnk"'/>
+	<install cmd='cmd /c copy /y c:\windows\temp\Open*.lnk "c:\documents and settings\all users\start menu\programs\OpenOffice.Org 2.2\"'/>
+	<install cmd='cmd /c copy /y "c:\windows\temp\OpenOffice.org Word Processor.lnk" "C:\documents and settings\all users\desktop\"'/>
+	<install cmd='cmd /c copy /y "c:\windows\temp\OpenOffice.org Spreadsheet.lnk" "C:\documents and settings\all users\desktop\"'/>
+	<install cmd='cmd /c copy /y "c:\windows\temp\Setup-*.xcu" "C:\Program Files\OpenOffice.org 2.2\share\registry\modules\org\openoffice\setup\"' />
+	<install cmd='regedit /s "C:\WINDOWS\TEMP\openoffice.reg"' />
+	
+	<upgrade cmd="msiexec /qn /x c:\windows\temp\openofficeorg22.msi"/>
+	<upgrade cmd='msiexec /qn /i "c:\windows\temp\openofficeorg22.msi" ALLUSERS=1 SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1' />
+	<upgrade cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\OpenOffice.Org 2.2\*.lnk" "C:\documents and settings\all users\desktop\OpenOffice*.lnk"'/>
+        <upgrade cmd='cmd /c copy /y c:\windows\temp\Open*.lnk "c:\documents and settings\all users\start menu\programs\OpenOffice.Org 2.2\"'/>                                                                                                      
+        <upgrade cmd='cmd /c copy /y "c:\windows\temp\OpenOffice.org Word Processor.lnk" "C:\documents and settings\all users\desktop\"'/>
+        <upgrade cmd='cmd /c copy /y "c:\windows\temp\OpenOffice.org Spreadsheet.lnk" "C:\documents and settings\all users\desktop\"'/>
+	<!--upgrade cmd='cmd /c copy /y "c:\windows\temp\Setup.xcu" "C:\Program Files\OpenOffice.org 2.2\share\registry\data\org\openoffice\Setup.xcu"' /-->
+	<upgrade cmd='cmd /c copy /y "c:\windows\temp\Setup-*.xcu" "C:\Program Files\OpenOffice.org 2.2\share\registry\modules\org\openoffice\setup\"' />
+	<upgrade cmd='regedit /s "C:\WINDOWS\TEMP\openoffice.reg"' />
+
+
+	<remove cmd="msiexec /qn /x c:\windows\temp\openofficeorg22.msi"/>
+	<remove cmd='cmd /c del "c:\documents and settings\all users\start menu\programs\OpenOffice.Org 2.2\*.lnk" "C:\documents and settings\all users\desktop\OpenOffice*.lnk"'/>
+ 
+	<depends package-id="jre"/>
+    </package>
+
+
+
+	<package id="hivecleanup" name="User Profile Hive Cleanup Service" revision="1" priority="20" reboot="false">
+		<file name="UPHClean-Setup.msi" timeout="7201">
+			<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/UPHClean-Setup.msi"/>
+		</file>
+		<check type="uninstall" condition="exists" path="User Profile Hive Cleanup Service"/>
+		<install cmd="msiexec /quiet /i c:\WINDOWS\TEMP\UPHClean-Setup.msi"/>
+		<uninstall cmd="msiexec /quiet /x c:\WINDOWS\TEMP\UPHClean-Setup.msi"/>
+	</package>
+
+	<package id="sctoolkit" name="Shared Computer Toolkit" revision="1" priority="15" reboot="false">
+		<file name="Shared_Computer_Toolkit_ENU.msi" timeout="7201">
+			<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Shared_Computer_Toolkit_ENU.msi"/>
+		</file>
+		<check type="uninstall" condition="exists" path="Microsoft Shared Computer Toolkit"/>
+		<install cmd="msiexec /quiet /i c:\WINDOWS\TEMP\Shared_Computer_Toolkit_ENU.msi"/>
+		<remove cmd="msiexec /quiet /x c:\WINDOWS\TEMP\Shared_Computer_Toolkit_ENU.msi"/>
+		<depends package-id="hivecleanup"/>
+	</package>
+
+
+
+    <package id="timesync" name="Time Synchonization" revision="1" priority="100" reboot="false" execute="always">
+    <!-- install cmd='net time \\grape /set /yes' / -->
+        <install cmd="w32tm /config /syncfromflags:manual /manualpeerlist:time.nist.gov"/>
+        <install cmd="w32tm /config /update"/>
+    </package>
+
+    <package id="acrobat" name="Adobe Reader" revision="8000" priority="3" reboot="false">
+        <file name="AdbeRdr80_en_US.exe" timeout="7201">
+            <source url="http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe"/>
+        </file>
+        <file name="removeOldVersions.vbs" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/removeOldVersions.vbs"/>
+        </file>
+        <file name="registryMods.reg" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/registryMods.reg"/>
+        </file>
+        <check type="uninstall" condition="exists" path="Adobe Reader 8"/>
+        <install cmd="cscript.exe C:\windows\temp\removeOldVersions.vbs"/> 
+        <install cmd="C:\WINDOWS\TEMP\AdbeRdr80_en_US.exe /sPB /rs /l /msi&quot;/qb-! /norestart /log c:\acrobat8.log ALLUSERS=2 EULA_ACCEPT=YES SUPPRESS_APP_LAUNCH=YES&quot;"/> 
+        <install cmd="cmd /d /c del /q /f &quot;%ALLUSERSPROFILE%\Start Menu\Programs\Startup&quot;\*.lnk"/> 
+        <install cmd="regedit /s &quot;C:\WINDOWS\TEMP\registryMods.reg&quot;"/>
+        <remove cmd="MsiExec.exe /q /x{AC76BA86-7AD7-1036-7B44-A70500000002}"/> 
+        <upgrade cmd="C:\WINDOWS\TEMP\AdbeRdr80_en_US.exe /sPB /rs /l /msi&quot;/qb-! /norestart /log c:\acrobat8.log ALLUSERS=2 EULA_ACCEPT=YES SUPPRESS_APP_LAUNCH=YES&quot;"/> 
+        <depends package-id="firefox"/> 
+</package>
+
+    <package id="ssl_cert" name="ssl certificate" revision="1" priority="50" reboot="false" execute="once">
+    <!-- From XML Import -->
+        <install cmd="\\unattended\wpkg\pkg\ssl\CertMgr.Exe -add \\unattended\wpkg\pkg\ssl\ca-cert.der -s -r localMachine root"/>
+    </package>
+
+    <package id="defrag" name="defrag scheduled task" revision="1" priority="4" reboot="false" execute="once">
+    <!-- From XML Import -->
+        <install cmd="schtasks /create /tn defrag /tr &quot;C:\WINDOWS\system32\defrag.exe C:-f&quot; /sc WEEKLY /d SUN /st 06:00:00 /sd 04/08/2007 /ru &quot;System&quot;"/>
+    </package>
+
+    <package id="firefox" name="Mozilla Firefox 2.0" revision="174" priority="12" reboot="false">
+        <file name="firefox-2006.exe" timeout="7201">
+            <source url="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.6/win32/en-US/Firefox%20Setup%202.0.0.6.exe"/>
+        </file>
+        <file name="ff_install_fixes.cmd" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/ff_install_fixes.cmd"/>
+        </file>
+        <file name="sfp.xpi" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/sfp.xpi"/>
+        </file>
+	<file name="Firefox Web Browser.lnk" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/Firefox Web Browser.lnk"/>
+	</file>
+        <file name="ff_update_fix.cmd" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/ff_update_fix.cmd"/>
+        </file>
+	<file name="firefox.js" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/firefox.js"/>
+	</file>
+	<file name="mozilla.cfg" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/mozilla.cfg"/>
+	</file>
+        <check type="uninstall" condition="exists" path="Mozilla Firefox (2.0.0.6)"/>
+        <install cmd="C:\WINDOWS\TEMP\firefox-2006.exe -ms -ira">
+            <exit code="0"/>
+        </install>
+        <install cmd="C:\WINDOWS\TEMP\ff_install_fixes.cmd"/>
+        <remove cmd="C:\Program Files\Mozilla Firefox\uninstall\helper.exe /S"/>
+        <remove cmd="C:\WINDOWS\TEMP\ff_delete_created_icon.cmd"/>
+	<upgrade cmd="C:\WINDOWS\TEMP\firefox-2006.exe -ms -ira">                                   <exit code="0"/>     
+	</upgrade> 
+        <upgrade cmd="C:\WINDOWS\TEMP\ff_update_fix.cmd"/>
+    </package>
+    
+    <package id="flashplayerfirefox" name="Flash Player Firefox" revision="20" priority="9" reboot="false">
+        <file name="install_flash_player.exe" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/install_flash_player.exe"/>
+        </file>
+        <check type="uninstall" condition="exists" path="Adobe Flash Player Plugin"/>
+        <install cmd="C:\WINDOWS\TEMP\install_flash_player.exe /S">
+            <exit code="0"/>
+        </install>
+        <upgrade cmd="C:\WINDOWS\TEMP\install_flash_player.exe /S"/>
+        <depends package-id="firefox"/>
+    </package>
+    
+    <package id="ocsing" name="OcsInventory" revision="7" priority="5" reboot="false">
+        <file name="OcsAgentSetup.exe" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/OcsAgentSetup.exe"/>
+        </file>
+        <check type="file" condition="versiongreaterorequal" path="C:\Program Files\OCS Inventory Agent\OCSInventory.exe" value="4.0.2.6"/>
+        <install cmd="C:\windows\temp\OcsAgentSetup.exe /S /server:desert.greenpeaceusa.org /NP /tag:GPWDC"/>
+        <upgrade cmd="c:\windows\temp\OcsAgentSetup.exe /S /UPGRADE /SERVER:desert.greenpeaceusa.org /NP /NOSPLASH /tag:GPWDC"/>
+        <remove cmd="'c:\program files\OCS Inventory Agent\uninst.exe' /s"/>
+    </package>
+   
+	<package id="dotnet" name="Dot Net Runtime environment" revision="1" reboot="false" priority="1">
+		<file name="dotnetfx.exe" timeout="7201">
+			<source url="http://download.microsoft.com/download/5/6/7/567758a3-759e-473e-bf8f-52154438565a/dotnetfx.exe"/>
+		</file>
+		<check type="uninstall" condition="exists" path="Microsoft .NET Framework 2.0"/>
+		<install cmd="c:\WINDOWS\TEMP\dotnetfx.exe /q:a /c:&quot;install.exe /q&quot;"/>
+		<upgrade cmd="c:\WINDOWS\TEMP\dotnetfx.exe /q:a /c:&quot;install.exe /q&quot;"/>
+		<remove cmd="c:\windows\microsoft.net\framework\v2.0.50727\"/>
+	</package>
+
+    <package id="clamwin" name="ClamWin Free Antivirus" revision="5" reboot="false" priority="1">
+        <file name="clamAV.msi" timeout="7201">
+            <source url="http://w32.clamav.net/downloads/clamAV.msi"/>
+        </file>
+        <file name="clam-conf.bat" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/clam-conf.bat"/>
+        </file>
+	<file name="clam-scan.bat" timeout="7201">
+		<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/clam-scan.bat"/>
+	</file>
+        <check type="uninstall" condition="exists" path="clamAV"/>
+        <install cmd="msiexec /i c:\WINDOWS\TEMP\clamAV.msi /quiet /norestart"/> 
+      <!--
+	  <install cmd='C:\WINDOWS\TEMP\clam-conf.bat' >
+            <exit code="0" />        
+            <exit code="1" />        
+        </install>            
+       -->
+	<install cmd="cmd /c move c:\WINDOWS\TEMP\clam-scan.bat &quot;c:\program files\clamav\&quot;"/>
+
+	 <upgrade cmd="msiexec /i C:\WINDOWS\TEMP\clamAV.msi /quiet /norestart">
+            <exit code="0"/>
+        </upgrade>        
+        <!--
+	<upgrade cmd='C:\WINDOWS\TEMP\clam-conf.bat' >
+            <exit code="0" />        
+            <exit code="1" />        
+        </upgrade>
+	-->
+        <remove cmd="C:\Program Files\ClamWin\unins000.exe"/>
+	<depends package-id="dotnet"/>
+    </package>
+        
+        
+    <package id="vlc" name="Video LAN Client" revision="1" reboot="false" priority="0">
+        <file name="vlc-0.8.6b-win32.exe" timeout="7201">
+            <source url="http://mirrors.optralan.com/videolan/vlc/0.8.6b/win32/vlc-0.8.6b-win32.exe"/>
+        </file>
+        <check type="uninstall" condition="exists" path="VideoLAN VLC media player 0.8.6b"/>
+        <install cmd="&quot;C:\WINDOWS\TEMP\vlc-0.8.6b-win32.exe&quot; /S"/>
+        <install cmd="cmd /c del &quot;%ALLUSERSPROFILE%\Desktop\VLC media player.lnk&quot;"/>
+        <remove cmd="&quot;C:\Program Files\VideoLAN\VLC\uninstall.exe&quot; /S"/>
+    </package>
+
+	<package id="dellprinter" name="Dell 1720dn Printer" revision="6" reboot="false" priority="5">
+		<file name="R149549.exe" timeout="7201">
+			<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/R149549.exe"/>
+		</file>
+		<file name="addPrinterPort.vbs" timeout="7201">
+			<source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/addPrinterPort.vbs"/>
+                </file>
+		<check type="file" condition="exists" path="c:\dell\\Drivers\convHBP\drivers\print\win_2kxp\dkabj740.inf"/>
+		<install cmd='c:\windows\temp\R149549.exe /silent' timeout='30'>
+			<exit code="0"/>
+			<exit code="-1"/>
+		</install>	
+		<install cmd='taskkill /IM rundll32.exe' />
+		<install cmd='cscript "c:\windows\temp\addPrinterPort.vbs"'/>
+		<install cmd='rundll32 printui.dll,PrintUIEntry /if /b "Dell Laser Printer 1720dn" /f "c:\dell\Drivers\convHBP\drivers\print\win_2kxp\dkabj740.inf" /r "IP_10.0.0.2" /m "Dell Laser Printer 1720dn"'/>	
+	</package>
+    
+    <package id="wpkg" name="WPKG Conf Files" revision="5" reboot="false" priority="90" execute="always">
+        <file name="profiles.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/profiles.xml"/>
+        </file>
+        <file name="wpkg.js" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg.js"/>
+        </file>
+        <file name="hosts.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/hosts.xml"/>
+        </file>
+        <file name="packages.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/packages.xml"/>
+        </file>
+        <file name="wpkg-start.bat" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg-start.bat"/>
+        </file>
+	<file name="wpkg-debug.bat" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg-debug.bat"/>
+        </file>
+        <file name="wpkg.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg.xml"/>
+        </file>
+        <install cmd="cmd /c md &quot;c:\program files\wpkg&quot; &quot;c:\program files\wpkg\self&quot;">
+            <exit code="0"/>
+            <exit code="1"/>
+        </install>	
+        <install cmd="cmd /c move c:\windows\temp\profiles.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg.js  &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\hosts.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\packages.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg-start.bat &quot;c:\program files\wpkg\&quot;"/>
+	<install cmd="cmd /c move c:\windows\temp\wpkg-debug.bat &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg.xml &quot;c:\program files\wpkg\self\packages.xml&quot;"/>
+        <install cmd="cmd /c copy &quot;c:\program files\wpkg\hosts.xml&quot; &quot;c:\program files\wpkg\self\&quot;"/>
+        <install cmd="cmd /c copy &quot;c:\program files\wpkg\profiles.xml&quot; &quot;c:\program files\wpkg\self\&quot;"/>
+    </package>
+</packages>
+

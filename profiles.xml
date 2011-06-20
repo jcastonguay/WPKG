@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<profiles>
+  <profile id="default">
+    <package package-id="wpkg"/>
+    <package package-id="firefox"/>
+    <package package-id="flashplayerfirefox"/>
+    <package package-id="acrobat"/>
+    <package package-id="ocsing"/>
+    <package package-id="tightvnc"/>
+    <package package-id="nod32"/>
+<!--    <package package-id="spybotsd"/ -->
+  </profile>
+  <profile id="Frontline">
+    <depends profile-id="default"/>
+    <package package-id="bginfo"/>
+    <package package-id="jre"/>
+    <package package-id="openoffice"/>
+    <package package-id="dotnet"/>
+    <package package-id="clamwin"/>
+    <package package-id="timesync"/>
+    <package package-id="vlc"/>
+    <package package-id="webdrive"/>
+    <package package-id="quicktime"/>
+    <package package-id="dellprinter"/>
+  </profile>
+  <profile id="InternalDesktop">
+    <depends profile-id="default"/>
+    <package package-id="thunderbird"/>
+    <package package-id="spybotsd"/>
+    <package package-id="psi"/>
+    <package package-id="ssl-cert"/>
+    <package package-id="localtimesync"/>
+    <package package-id="defrag"/>
+    <package package-id="putty"/>
+  </profile>
+  <profile id="BostonFrontline">
+	<depends profile-id="Frontline"/>
+	<package package-id="webdriveboston"/>
+  </profile>
+  <profile id="NewYorkFrontline">
+	<depends profile-id="Frontline"/>
+	<package package-id="webdrivenewyork"/>
+  </profile>
+  <profile id="SeattleFrontline">
+        <depends profile-id="Frontline"/>
+        <package package-id="webdriveseattle"/>
+  </profile>
+  <profile id="PortlandFrontline">
+        <depends profile-id="Frontline"/>
+        <package package-id="webdriveportland"/>
+  </profile>
+  <profile id="ChicagoFrontline">
+        <depends profile-id="Frontline"/>
+        <package package-id="webdrivechicago"/>
+  </profile>
+  <profile id="LosAngelesFrontline">
+	<depends profile-id="Frontline"/>
+	<package package-id="webdrivelosangeles"/>
+  </profile>
+  <profile id="SanDiegoFrontline">
+	<depends profile-id="Frontline"/>
+	<package package-id="webdrivesandiego"/>
+  </profile>
+  <profile id="OrangeCountyFrontline">
+	<depends profile-id="Frontline"/>
+	<package package-id="webdriveorangecounty"/>
+  </profile>
+</profiles>

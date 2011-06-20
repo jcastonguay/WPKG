@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Adobe\Acrobat Reader\8.0\Downtown]
+"bDontShowAtLaunch"=dword:1
+"bGoOnline"=dword:0
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Adobe\Acrobat Reader\8.0\FeatureLockdown]
+"bUpdater"=dword:00000000
+"bShowEbookMenu"=dword:00000000
+"bPurchaseAcro"=dword:00000000
+"bCreatePDFOnline"=dword:00000000
+"bBrowserIntegration"=dword:00000000

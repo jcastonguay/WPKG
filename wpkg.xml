@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+    <package id="wpkg" name="WPKG Conf Files" revision="4" reboot="false" priority="90" execute="always">
+        <file name="profiles.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/profiles.xml"/>
+        </file>
+        <file name="wpkg.js" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg.js"/>
+        </file>
+        <file name="hosts.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/hosts.xml"/>
+        </file>
+        <file name="packages.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/packages.xml"/>
+        </file>
+        <file name="wpkg-start.bat" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg-start.bat"/>
+        </file>
+        <file name="wpkg.xml" timeout="7201">
+            <source url="https://wpkg:password@grass.greenpeaceusa.org/wpkg/wpkg.xml"/>
+        </file>
+        <install cmd="cmd /c md &quot;c:\program files\wpkg&quot; &quot;c:\program files\wpkg\self&quot;">
+            <exit code="0"/>
+            <exit code="1"/>
+        </install>	
+        <install cmd="cmd /c move c:\windows\temp\profiles.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg.js  &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\hosts.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\packages.xml &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg-start.bat &quot;c:\program files\wpkg\&quot;"/>
+        <install cmd="cmd /c move c:\windows\temp\wpkg.xml &quot;c:\program files\wpkg\self\packages.xml&quot;"/>
+        <install cmd="cmd /c copy &quot;c:\program files\wpkg\hosts.xml&quot; &quot;c:\program files\wpkg\self\&quot;"/>
+        <install cmd="cmd /c copy &quot;c:\program files\wpkg\profiles.xml&quot; &quot;c:\program files\wpkg\self\&quot;"/>
+    </package>
+  
+</packages>

@@ -1,0 +1,16 @@
+To Install:
+
+Unzip wpkg-base.zip to c:\program files\wpkg
+
+If you havn't done this, then make that directory and move these files there.
+
+Double click on cert. select TRUSTED ROOT CERTIFICATE AUTHORITY instead of automatic. Import the Certificate.
+
+Double click on wpkg-start.bat
+
+This will take a while to download and install everything.
+
+Finally, in SteadyState, add wpkg-start.bat to the batch files it runs at 3:00 AM.
+
+-- 
+Jason Castonguay jason.castonguay@wdc.greenpeace.org 8/20/07

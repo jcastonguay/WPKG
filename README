@@ -1,0 +1,10 @@
+My modificaitons to wpkg, from a few years ago.  This has http and https access to software.
+
+The code copies installation files to the machines, and then does a local silent install.
+
+There is also code to have this work along side steadystate.
+
+
+wpkg can be found at wpkg.org
+-- 
+Jason
